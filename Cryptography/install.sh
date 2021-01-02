@@ -1,0 +1,9 @@
+cd $(dirname $0)
+pwd=`pwd`
+echo Creating executable...
+touch 'rsa'
+echo 'python3 '$pwd'/rsa.py $1 $2 $3' >> ./rsa
+echo Changing permissions to make file 'rsa' executable...
+chmod +x rsa
+echo Creating a link to file 'rsa' in '/usr/local/bin'...
+sudo ln -s $pwd/rsa /usr/local/bin/rsa
